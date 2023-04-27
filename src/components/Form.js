@@ -29,9 +29,17 @@ const Form = () => {
   }
 
   return (
-    <form>
-      {/* TODO - Logic for returning a form element with labels and inputs for link name and URL */}
-    </form>
+    <form onSubmit={onFormSubmit}>
+    <label>
+      Name:
+    <input type="text" name="name" value={name} onChange={handleChange} /><br/>
+    </label>
+    <label>
+      URL:
+      <input type="text" name="url" value={url} onChange={handleChange} /><br/>
+    </label>
+    <button type="submit">submit</button>
+  </form>
   )
 }
 
