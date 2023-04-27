@@ -1,9 +1,9 @@
 import { useState } from 'react'
 
-const Form = () => {
+const Form = ({handleSubmit}) => {
   const [name, setName] = useState('')
   const [url, setUrl] = useState('')
-
+  const data =  {handleSubmit}
   const handleChange = (event) => {
     /*
             TODO - Logic for changing state based on form changes
@@ -20,7 +20,7 @@ const Form = () => {
   function onFormSubmit(event) {
     // to prevent page reload on form submit
     event.preventDefault()
-    props.handleSubmit({ name , url })
+    data.handleSubmit({ name , url })
     setName('')
     setUrl('')
     /*

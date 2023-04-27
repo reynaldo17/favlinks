@@ -2,10 +2,9 @@ import { useState } from 'react'
 import Table from './Table';
 import Form from './Form';
 
-const LinkContainer = (props) => {
+const LinkContainer = () => {
 
-  const [linkData, setLinkData] = props
-  props = useState([])
+  const[linkData, setLinkData] = useState([])
 
   const handleRemove = (index) => {
     /*
@@ -27,8 +26,7 @@ const LinkContainer = (props) => {
     <div className="container">
       <h1>My Favorite Links</h1>
       <p>Add a new url with a name and link to the table.</p>
-      <Table linkData={linkData} 
-             removeLink={removeLink}/>
+      <Table linkData={linkData} removeLink={handleRemove}/>
       <br />
       <h3>Add New</h3>
       <Form handleSubmit={handleSubmit}/>
