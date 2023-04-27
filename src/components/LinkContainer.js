@@ -4,8 +4,8 @@ import Form from './Form';
 
 const LinkContainer = (props) => {
 
-  const data = [linkData, setLinkData]
-  data = useState([])
+  const [linkData, setLinkData] = props
+  props = useState([])
 
   const handleRemove = (index) => {
     /*
@@ -19,19 +19,19 @@ const LinkContainer = (props) => {
     /*
             TODO - Create logic to set state and add new favLink to favLinks array in state
         */
-       
+            setLinkData([...linkData, favLink])
+
     }
 
   return (
     <div className="container">
       <h1>My Favorite Links</h1>
       <p>Add a new url with a name and link to the table.</p>
-      {/*TODO - Add Table Component */}
-
+      <Table linkData={linkData} 
+             removeLink={removeLink}/>
       <br />
-
       <h3>Add New</h3>
-      {/*TODO - Add Form Component */}
+      <Form handleSubmit={handleSubmit}/>
     </div>
   )
 }
