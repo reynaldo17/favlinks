@@ -4,7 +4,6 @@ import './stylesheet.css'
 const Form = ({handleSubmit}) => {
   const [name, setName] = useState('')
   const [url, setUrl] = useState('')
-  const data =  {handleSubmit}
   const handleChange = (event) => {
     /*
             TODO - Logic for changing state based on form changes
@@ -12,8 +11,7 @@ const Form = ({handleSubmit}) => {
     const{ name, value } = event.target
     if (name === 'name') {
       setName(value)
-    } 
-    if (name === 'url') {
+    } else if (name === 'url') {
       setUrl(value)
     }
   }
@@ -21,7 +19,7 @@ const Form = ({handleSubmit}) => {
   function onFormSubmit(event) {
     // to prevent page reload on form submit
     event.preventDefault()
-    data.handleSubmit({ name , url })
+    handleSubmit({ name , url })
     setName('')
     setUrl('')
     /*
@@ -31,16 +29,16 @@ const Form = ({handleSubmit}) => {
 
   return (
     <form onSubmit={onFormSubmit}>
-    <label>
-      Name:
-    <input type="text" name="name" value={name} onChange={handleChange} /><br/>
-    </label>
-    <label>
-      URL:
+      <label>
+        Name:
+      <input type="text" name="name" value={name} onChange={handleChange} /><br/>
+      </label>
+      <label>
+        URL:
       <input type="text" name="url" value={url} onChange={handleChange} /><br/>
-    </label>
-    <button type="submit">submit</button>
-  </form>
+      </label>
+      <button type="submit">submit</button>
+    </form>
   )
 }
 

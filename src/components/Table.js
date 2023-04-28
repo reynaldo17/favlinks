@@ -37,9 +37,8 @@ const Table = (props) => {
   {
     /*TODO - return <table> component, TableHeader and TableBody  and pass props!*/
     return <table>
-      <TableBody 
-        linkData={props.linkData} removeLink={props.removeLink}
-      />
+      <TableHeader/>
+      <TableBody linkData={props.linkData} removeLink={props.removeLink} />
     </table>
   }
 }
