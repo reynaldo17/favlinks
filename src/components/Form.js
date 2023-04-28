@@ -2,8 +2,10 @@ import { useState } from 'react'
 import './stylesheet.css'
 
 const Form = ({handleSubmit}) => {
+
   const [name, setName] = useState('')
   const [url, setUrl] = useState('')
+  
   const handleChange = (event) => {
     /*
             TODO - Logic for changing state based on form changes
@@ -37,7 +39,7 @@ const Form = ({handleSubmit}) => {
         URL:
       <input type="text" name="url" value={url} onChange={handleChange} /><br/>
       </label>
-      <button type="submit">submit</button>
+      <button type="submit">Submit</button>
     </form>
   )
 }
