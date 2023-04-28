@@ -27,9 +27,12 @@ const LinkContainer = () => {
     <div className="container">
       <h1>My Favorite Links</h1>
       <p>Add a new url with a name and link to the table.</p>
+      <h3>Add New</h3>
+      <h5>Name</h5>
+      <h5>URL</h5>
+      <h5>Remove</h5>
       <Table linkData={linkData} removeLink={handleRemove}/>
       <br />
-      <h3>Add New</h3>
       <Form handleSubmit={handleSubmit}/>
     </div>
   )
